@@ -1,4 +1,4 @@
-package co.com.sofkau.tiendas.puntosdeventa;
+package co.com.d1.tiendas.puntosdeventa;
 
 import co.com.sofka.domain.generic.EventChange;
 

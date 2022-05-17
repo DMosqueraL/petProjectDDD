@@ -1,8 +1,8 @@
-package co.com.sofkau.tiendas.puntosdeventa;
+package co.com.d1.tiendas.puntosdeventa;
 
+import co.com.d1.tiendas.puntosdeventa.events.CajaCreada;
+import co.com.d1.tiendas.puntosdeventa.values.IdCaja;
 import co.com.sofka.domain.generic.AggregateEvent;
-import co.com.sofkau.tiendas.puntosdeventa.events.CajaCreada;
-import co.com.sofkau.tiendas.puntosdeventa.values.IdCaja;
 
 public class Caja extends AggregateEvent<IdCaja> {
 
