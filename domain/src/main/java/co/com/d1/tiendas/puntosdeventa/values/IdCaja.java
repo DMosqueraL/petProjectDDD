@@ -1,4 +1,6 @@
 package co.com.d1.tiendas.puntosdeventa.values;
 
-public class IdCaja {
+import co.com.sofka.domain.generic.Identity;
+
+public class IdCaja extends Identity {
 }
