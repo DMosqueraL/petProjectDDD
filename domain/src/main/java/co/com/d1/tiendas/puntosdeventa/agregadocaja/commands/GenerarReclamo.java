@@ -1,18 +1,18 @@
-package co.com.d1.tiendas.puntosdeventa.agregadocaja.events;
+package co.com.d1.tiendas.puntosdeventa.agregadocaja.commands;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
-import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.domain.generic.Command;
 
-public class ReclamoGenerado extends DomainEvent {
-
+public class GenerarReclamo extends Command {
     private final IdFactura idFactura;
     private final Factura factura;
     private final DocumentoUsuario documentoUsuario;
-    public ReclamoGenerado(IdFactura idFactura, Factura factura, DocumentoUsuario documentoUsuario) {
 
-        super("co.com.d1.tiendas.puntosdeventa.agregadocaja.ReclamoGenerado");
+    public GenerarReclamo(IdFactura idFactura,
+                          Factura factura,
+                          DocumentoUsuario documentoUsuario) {
         this.idFactura = idFactura;
         this.factura = factura;
         this.documentoUsuario = documentoUsuario;
