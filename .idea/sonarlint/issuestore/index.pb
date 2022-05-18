@@ -9,8 +9,6 @@
 \domain/src/main/java/co/com/d1/tiendas/puntosdeventa/agregadobodega/events/BodegaCreada.java,2\7\279f70a7d1438d6877d14a60fde59b6917b10846
 Š
 Zdomain/src/main/java/co/com/d1/tiendas/puntosdeventa/agregadobodega/BodegaEventChange.java,4\1\41a917d2710a5dd4dc741fb55b7de69f3460e986
-ˆ
-Xdomain/src/main/java/co/com/d1/tiendas/puntosdeventa/agregadocaja/events/CajaCreada.java,6\1\6132f70d0292205fd6be310638d29595664f2efa
 x
 Hdomain/src/main/java/co/com/d1/tiendas/puntosdeventa/empleado/Email.java,3\f\3f61def8bb8b46550e1b1130e4dd2e3d2217992c
 –
