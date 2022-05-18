@@ -1,4 +1,4 @@
-package co.com.d1.tiendas.puntosdeventa.empleado.values;
+package co.com.d1.tiendas.puntosdeventa.agregadoempleado.values;
 
 import co.com.sofka.domain.generic.Identity;
 

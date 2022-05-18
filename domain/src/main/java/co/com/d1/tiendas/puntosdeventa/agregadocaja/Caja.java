@@ -4,14 +4,26 @@ import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdEquipo;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
-
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
+
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.*;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.*;
 import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
 import co.com.d1.tiendas.puntosdeventa.empleado.values.IdEmpleado;
+
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaCreada;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaImpresa;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdEquipoComputo;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.Empleado;
+
+
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;
