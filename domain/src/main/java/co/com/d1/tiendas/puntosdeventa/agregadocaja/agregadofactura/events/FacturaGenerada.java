@@ -27,4 +27,24 @@ public class FacturaGenerada extends DomainEvent {
         this.productos = productos;
         this.cantidadProducto = cantidadProducto;
     }
+
+    public IdFactura getIdFactura() {
+        return idFactura;
+    }
+
+    public DetalleFactura getDetalleFactura() {
+        return detalleFactura;
+    }
+
+    public DocumentoUsuario getNumeroIdentificacion() {
+        return numeroIdentificacion;
+    }
+
+    public Map<IdProducto, Producto> getProductos() {
+        return productos;
+    }
+
+    public Cantidad getCantidadProducto() {
+        return cantidadProducto;
+    }
 }

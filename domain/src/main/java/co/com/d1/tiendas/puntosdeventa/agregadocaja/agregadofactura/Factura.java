@@ -2,9 +2,6 @@ package co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura;
 
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.FacturaCreada;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.FacturaGenerada;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.ReclamoGenerado;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
@@ -16,10 +13,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Factura extends AggregateEvent<IdFactura> {
-    protected DetalleFactura detalleFactura;
-    protected Map<IdProducto, Producto> productos;
-    protected DocumentoUsuario numeroIdentificacion;
-    protected Cantidad cantidadProducto;
+    public DetalleFactura detalleFactura;
+    public Map<IdProducto, Producto> productos;
+    public DocumentoUsuario numeroIdentificacion;
+    public Cantidad cantidadProducto;
 
     public Factura(IdFactura idFactura,
                    DetalleFactura detalleFactura,
@@ -27,8 +24,10 @@ public class Factura extends AggregateEvent<IdFactura> {
                    Map<IdProducto, Producto> productos,
                    Cantidad cantidadProducto) {
         super(idFactura);
-        appendChange(new FacturaCreada(detalleFactura, productos, numeroIdentificacion, cantidadProducto)).apply();
-        subscribe(new FacturaEventChange(this));
+        this.detalleFactura = detalleFactura;
+        this.numeroIdentificacion = numeroIdentificacion;
+        this.productos = productos;
+        this.cantidadProducto = cantidadProducto;
     }
 
     private Factura(IdFactura idFactura){
@@ -48,12 +47,10 @@ public class Factura extends AggregateEvent<IdFactura> {
                                Cantidad cantidadProducto){
 
         var idFactura = new IdFactura();
-        appendChange(new FacturaGenerada(idFactura, detalleFactura,
-                numeroIdentificacion, productos, cantidadProducto)).apply();
-    }
-
-    public void generarReclamo(IdFactura idFactura, DocumentoUsuario documentoUsuario){
-        appendChange(new ReclamoGenerado(idFactura, documentoUsuario)).apply();
+        this.detalleFactura = detalleFactura;
+        this.numeroIdentificacion = numeroIdentificacion;
+        this.productos = productos;
+        this.cantidadProducto = cantidadProducto;
     }
 
     public DetalleFactura DetalleFactura() {

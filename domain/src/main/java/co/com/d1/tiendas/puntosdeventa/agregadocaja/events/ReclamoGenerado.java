@@ -1,4 +1,4 @@
-package co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events;
+package co.com.d1.tiendas.puntosdeventa.agregadocaja.events;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;

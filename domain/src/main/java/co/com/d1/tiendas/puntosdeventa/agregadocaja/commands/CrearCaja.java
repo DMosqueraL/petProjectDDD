@@ -9,16 +9,16 @@ import co.com.sofka.domain.generic.Command;
 public class CrearCaja extends Command {
     private final IdCaja idCaja;
     private final Empleado empleadoCaja;
-    private final Factura factura;
+    /*private final Factura factura;*/
     private final EquipoComputo equipoComputo;
 
     public CrearCaja(IdCaja idCaja,
                      Empleado empleadoCaja,
-                     Factura factura,
+                     /*Factura factura,*/
                      EquipoComputo equipoComputo) {
         this.idCaja = idCaja;
         this.empleadoCaja = empleadoCaja;
-        this.factura = factura;
+        /*this.factura = factura;*/
         this.equipoComputo = equipoComputo;
     }
 
@@ -30,9 +30,9 @@ public class CrearCaja extends Command {
         return empleadoCaja;
     }
 
-    public Factura getFactura() {
+    /*public Factura getFactura() {
         return factura;
-    }
+    }*/
 
     public EquipoComputo getEquipoComputo() {
         return equipoComputo;
