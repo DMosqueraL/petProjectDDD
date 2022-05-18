@@ -1,8 +1,6 @@
 package co.com.d1.tiendas.puntosdeventa.agregadobodega.events;
 
-import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
-import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.KardexInventario;
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.sofka.domain.generic.DomainEvent;
 
