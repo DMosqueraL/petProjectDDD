@@ -1,10 +1,14 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.Facturacreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaGenerada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdEquipoComputo;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -35,6 +39,17 @@ public class Caja extends AggregateEvent<IdCaja> {
         return caja;
     }
 
+    public void generarFactura(IdFactura idFactura, IdCaja idCaja){
+        appendChange(new FacturaGenerada(idFactura, idCaja));
+    }
+
+    public void reemplazarEquipoComputo(IdEquipoComputo idEquipoComputo,
+                                        Nombre nombreEquipo,
+                                        MarcaEquipoComputo marca,
+                                        NumeroSerieEquipoComputo serial){
+        appendChange(new EquipoComputoReemplazado(idEquipoComputo, nombreEquipo, marca, serial));
+    }
+
     public Empleado getEmpleadoCaja() {
         return empleadoCaja;
     }
@@ -43,7 +58,7 @@ public class Caja extends AggregateEvent<IdCaja> {
         return equipoComputo;
     }
 
-    public Boolean getCajaRapida() {
+    public Boolean isCajaRapida() {
         return cajaRapida;
     }
 }
