@@ -6,6 +6,11 @@ import co.com.sofka.domain.generic.ValueObject;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que permite cargar los detalles de una factura.
+ * @return documento tipo String
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class DetalleFactura implements ValueObject<List<Object>> {
 
     private final FechaFactura fechaFactura;

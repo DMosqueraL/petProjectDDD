@@ -4,6 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que permite determinar la categoria del producto
+ * @return categoria tipo String
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class Categoria implements ValueObject<String> {
 
     private final String categoria;

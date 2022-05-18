@@ -1,15 +1,23 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoCreado;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaCreada;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.*;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.EventChange;
 
+/**
+ * Clase que permite lanzar los eventos que se producen en el Agregado Caja
+ * Encontramos los eventos:
+ * CajaCreada -> Respuesta al comportamiento de crearCaja
+ * EquipoComputoCreado -> Respuesta al comportamiento crearEquipoComputo
+ * EquipoComputoReemplazado -> Respuesta al comportamiento reemplazarEquipoComputo
+ * FacturaCreada -> Respuesta al comportamiento crearFactura
+ * FacturaImpresa -> Respuesta al comportamiento imprimirFactura
+ * ReclamoGenerado -> Respuesta al comportamiento generarReclamo
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class CajaEventChange extends EventChange {
     public CajaEventChange(Caja caja) {
 

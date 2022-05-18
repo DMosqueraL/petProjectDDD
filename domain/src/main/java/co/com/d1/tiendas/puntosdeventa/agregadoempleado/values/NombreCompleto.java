@@ -5,6 +5,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que le permite al agredado Empleado determinar su nombre y apellido
+ * @return nombre de tipo Nombre
+ * @return apellido de tipo Apellido
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class NombreCompleto implements ValueObject<String> {
 
     private final Nombre nombre;

@@ -6,6 +6,10 @@ import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
+/**
+ * [E] Entidad Equipo que permite asignar a la bodega del punto de venta o tienda D1 los equipos
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class Equipo extends Entity<IdEquipo> {
 
     protected Nombre nombre;

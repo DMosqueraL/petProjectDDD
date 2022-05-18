@@ -4,6 +4,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que le permite a los puntos de venta del dominio determinar la ciudad donde
+ * se encuentran ubicados - Hace parte de un [OV] superior DetallePuntoDeVenta
+ * @return ciudad tipo String
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class Ciudad implements ValueObject<String> {
 
     private final String ciudad;

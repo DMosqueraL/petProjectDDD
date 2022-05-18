@@ -4,6 +4,11 @@ import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.Cargo;
 import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.IdEmpleado;
 import co.com.sofka.domain.generic.DomainEvent;
 
+/**
+ * [EV] Evento donde se ha asignado el cargo correspondiente a un empleado  que hace parte del
+ * punto de venta o tienda D1.
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class CargoAsignadoEmpleado extends DomainEvent {
 
     private IdEmpleado idEmpleado;

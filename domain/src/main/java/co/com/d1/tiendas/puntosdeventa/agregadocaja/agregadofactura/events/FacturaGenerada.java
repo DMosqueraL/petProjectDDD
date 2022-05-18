@@ -10,6 +10,10 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.Map;
 
+/**
+ * [EV] Evento donde se ha generado una factura en caja en el punto de venta o tienda D1
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class FacturaGenerada extends DomainEvent {
 
     private final IdFactura idFactura;

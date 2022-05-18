@@ -7,11 +7,14 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.TipoCaja;
 import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.IdEmpleado;
 import co.com.sofka.domain.generic.DomainEvent;
 
+/**
+ * [EV] Evento donde se cambia o se asigna el tipo se caja: rápida o normal.
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class TipoDeCajaDesignado extends DomainEvent {
 
     private TipoCaja tipoCaja;
     private IdCaja idCaja;
-
     private Caja caja;
     private IdEmpleado idEmpleado;
     private EquipoComputo equipoComputo;

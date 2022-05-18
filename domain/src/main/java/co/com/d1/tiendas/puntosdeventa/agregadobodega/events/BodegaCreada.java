@@ -10,6 +10,11 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.Map;
 
+/**
+ * [CM] Comando que ejecuta un usuario del sistema a través de una interfaz para crear una bodega
+ * en el punto de venta o tienda D1
+ * @Autores: Andrés Lozano y Doris Mosquera
+ */
 public class BodegaCreada extends DomainEvent {
 
     private Empleado empleadoBodega;

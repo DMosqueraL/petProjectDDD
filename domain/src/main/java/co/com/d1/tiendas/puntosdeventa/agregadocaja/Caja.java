@@ -17,6 +17,11 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * [A] Agregado Caja. Gestiona al agregado Factura y a la entidad EquipoComputo.
+ * Contiene los comportamientos:
+ * crearfactura - imprimirFactura - reemplazarEquipoComputo - generarReclamo - asignarTipoCaja
+ */
 public class Caja extends AggregateEvent<IdCaja> {
     protected IdFactura idFactura;
 

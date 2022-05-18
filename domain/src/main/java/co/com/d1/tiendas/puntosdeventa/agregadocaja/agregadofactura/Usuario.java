@@ -5,6 +5,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdUsu
 import co.com.d1.tiendas.puntosdeventa.genericos.Direccion;
 import co.com.sofka.domain.generic.Entity;
 
+/**
+ * [E] Entidad Usuario que permite asignar a la factura el documento de identidad del usuario
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class Usuario extends Entity<IdUsuario> {
     protected IdUsuario idUsuario;
     protected DocumentoUsuario numeroDocumento;

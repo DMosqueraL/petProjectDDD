@@ -4,6 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que permite determinar el tipo de caja en el punto de venta o tienda D1
+ * @return tipoCaja tipo Tipo
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class TipoCaja implements ValueObject<TipoCaja.Tipo> {
 
     private Tipo tipoCaja;

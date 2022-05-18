@@ -5,6 +5,11 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.Docum
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
 import co.com.sofka.domain.generic.Command;
 
+/**
+ * [CM] Comando que ejecuta un usuario del sistema a través de una interfaz para generar un
+ * reclamo en el punto de venta o tienda D1
+ * @Autores: Andrés Lozano y Doris Mosquera
+ */
 public class GenerarReclamo extends Command {
     private final IdFactura idFactura;
     private final Factura factura;

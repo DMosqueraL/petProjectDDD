@@ -14,6 +14,11 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * [A] Agregado Factura. Gestiona a la entidad Usuario.
+ * Contiene los comportamientos:
+ * generatFactura - cambiarDireccion
+ */
 public class Factura extends AggregateEvent<IdFactura> {
 
     public IdUsuario idUsuario;
@@ -37,7 +42,6 @@ public class Factura extends AggregateEvent<IdFactura> {
 
     private Factura(IdFactura idFactura){
         super(idFactura);
-        subscribe(new FacturaEventChange(this));
     }
 
     public static Factura from(IdFactura idFactura, List<DomainEvent> events){

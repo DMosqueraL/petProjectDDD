@@ -6,6 +6,7 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.List;
 
+
 public class DetallePuntoDeVenta implements ValueObject<List<Object>> {
 
     private final Direccion direccion;

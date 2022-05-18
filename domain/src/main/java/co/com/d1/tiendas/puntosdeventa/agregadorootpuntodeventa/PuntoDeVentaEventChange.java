@@ -9,6 +9,15 @@ import co.com.d1.tiendas.puntosdeventa.agregadorootpuntodeventa.events.PuntoDeVe
 import co.com.d1.tiendas.puntosdeventa.agregadorootpuntodeventa.events.TipoDeCajaDesignado;
 import co.com.sofka.domain.generic.EventChange;
 
+/**
+ * Clase que permite lanzar los eventos que se producen en el Agregado Root [AR] Punto de Venta
+ * Encontramos los eventos:
+ * PuntoDeVentaCreado -> Respuesta al comportamiento de crearPuntoDeVenta
+ * EmpleadoCreado -> Respuesta al comportamiento crearEmpleado
+ * TipoDeCajaDesignado -> Respuesta al comportamiento designarTipoDeCaja
+ * CargoAsignadoEmpleado -> Respuesta al comportamiento asignarCargoEmpleado
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class PuntoDeVentaEventChange extends EventChange {
     public PuntoDeVentaEventChange(PuntoDeVenta puntoDeVenta) {
 

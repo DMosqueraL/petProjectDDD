@@ -14,6 +14,11 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * [A] Agregado Bodega. Gestiona a las  entidades Producto y Equipo.
+ * Contiene los comportamientos:
+ * actualizarKardexInventario - actualizarNombreProducto - reportarEquipoDañado
+ */
 public class Bodega extends AggregateEvent<IdBodega> {
 
     protected Empleado empleadoBodega;

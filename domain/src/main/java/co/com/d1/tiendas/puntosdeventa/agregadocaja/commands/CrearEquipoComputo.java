@@ -6,6 +6,11 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComp
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.Command;
 
+/**
+ * [CM] Comando que ejecuta un usuario del sistema a través de una interfaz para crear un equipo de
+ * computo para una caja en el punto de venta o tienda D1
+ * @Autores: Andrés Lozano y Doris Mosquera
+ */
 public class CrearEquipoComputo extends Command {
     private final IdEquipoComputo idEquipoComputo;
     private final Nombre nombreEquipoComputo;

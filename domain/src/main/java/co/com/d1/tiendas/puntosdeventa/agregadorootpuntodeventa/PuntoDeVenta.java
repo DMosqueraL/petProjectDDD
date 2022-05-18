@@ -23,6 +23,10 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Agregado Root [AR] PuntoDeVenta. Gestionaa los agregados Caja, Empleado y Bodega con sus
+ * respectivos comportamientos para lanzar sus eventos.
+ */
 public class PuntoDeVenta extends AggregateEvent<IdPuntoDeVenta> {
 
     protected DetallePuntoDeVenta detallePuntoDeVenta;

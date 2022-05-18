@@ -4,6 +4,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que le permite a los puntos de venta del dominio asignar el NIT
+ * de la empresa - Hace parte de un [OV] superior DetallePuntoDeVenta
+ * @return nit tipo Long
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class Nit implements ValueObject<Long> {
 
     private final Long nit;

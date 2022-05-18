@@ -10,6 +10,16 @@ import co.com.sofka.domain.generic.EventChange;
 
 import java.util.HashMap;
 
+/**
+ * Clase que permite lanzar los eventos que se producen en el Agregado Bodega
+ * Encontramos los eventos:
+ * BodegaCreada -> Respuesta al comportamiento de crearBodega
+ * KardexInvetantarioActualizado -> Respuesta al comportamiento actualizarKardexInventario
+ * NombreProductoActualizado -> Respuesta al comportamiento actualizarNombreProducto
+ * EquipoDañadoReportado -> Respuesta al comportamiento reportarEquipo
+ * EquipoDañadoReportado -> Respuesta al comportamiento reportarEquipoDañado
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class BodegaEventChange extends EventChange {
     public BodegaEventChange(Bodega bodega) {
         apply((BodegaCreada event) -> {

@@ -4,6 +4,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que le permite a los puntos de venta del dominio determinar la cantidad
+ * de estanterias que posee  la tienda
+ * @return estanteria tipo Integer
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class Estanteria implements ValueObject<Integer> {
 
     private final Integer estanteria;

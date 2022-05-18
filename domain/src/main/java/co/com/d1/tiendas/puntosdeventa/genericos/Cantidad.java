@@ -4,6 +4,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor générico que puede ser utilizado por varias entidades, otros objetos de valor y/o
+ * agregados para  determinar la cantidad de su(s) parámetro(s)
+ * @return cantidad de tipo Interger
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class Cantidad implements ValueObject<Integer> {
 
     private final Integer cantidad;

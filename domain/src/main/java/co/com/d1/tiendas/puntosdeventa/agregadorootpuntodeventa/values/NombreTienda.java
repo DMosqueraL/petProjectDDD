@@ -5,6 +5,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que le permite a los puntos de venta del dominio el nombre de la tienda
+ * Hace parte de un [OV] superior DetallePuntoDeVenta
+ * @return nombreTienda tipo Nombre - [OV] Genérico
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class NombreTienda implements ValueObject<Object> {
 
     private final Nombre nombreTienda;
