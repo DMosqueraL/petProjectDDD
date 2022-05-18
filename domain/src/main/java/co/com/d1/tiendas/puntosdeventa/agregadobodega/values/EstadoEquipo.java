@@ -6,10 +6,10 @@ import java.util.Objects;
 
 public class EstadoEquipo implements ValueObject<EstadoEquipo.Estados> {
 
-private Estados value;
+private Estados estados;
 
-    public EstadoEquipo(Estados value) {
-        this.value = Objects.requireNonNull(value);
+    public EstadoEquipo(Estados estados) {
+        this.estados = Objects.requireNonNull(estados);
     }
 
     public enum Estados{
@@ -18,6 +18,6 @@ private Estados value;
 
     @Override
     public EstadoEquipo.Estados value() {
-        return value();
+        return estados;
     }
 }
