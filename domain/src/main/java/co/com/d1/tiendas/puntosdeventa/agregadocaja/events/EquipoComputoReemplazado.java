@@ -16,7 +16,7 @@ public class EquipoComputoReemplazado extends DomainEvent {
                                     Nombre nombreEquipo,
                                     MarcaEquipoComputo marca,
                                     NumeroSerieEquipoComputo serial) {
-        super("co.com.d1.tiendas.puntosdeventa.agregadocaja");
+        super("co.com.d1.tiendas.puntosdeventa.agregadocaja.EquipoComputoReemplazado");
         this.idEquipoComputo = idEquipoComputo;
         this.nombreEquipo = nombreEquipo;
         this.marcaEquipoComputo = marca;

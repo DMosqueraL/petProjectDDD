@@ -1,6 +1,13 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
+
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.CantidadProducto;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
+
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
@@ -9,7 +16,6 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
-
 import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 
@@ -17,6 +23,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
+import java.util.Map;
 
 public class Caja extends AggregateEvent<IdCaja> {
 
@@ -47,11 +54,18 @@ public class Caja extends AggregateEvent<IdCaja> {
         appendChange(new FacturaGenerada(idFactura, idCaja));
     }
 
+    public void detallesFactura(DetalleFactura detalleFactura,
+                                DocumentoUsuario numeroIdentificacion,
+                                Map<IdProducto, Producto> productos,
+                                CantidadProducto cantidadProducto){
+
+    }
+
     public void reemplazarEquipoComputo(IdEquipoComputo idEquipoComputo,
                                         Nombre nombreEquipo,
                                         MarcaEquipoComputo marca,
                                         NumeroSerieEquipoComputo serial){
-        appendChange(new EquipoComputoReemplazado(idEquipoComputo, nombreEquipo, marca, serial, idEquipoComputo1, nombreEquipo1, marcaEquipoComputo, serial1));
+        appendChange(new EquipoComputoReemplazado(idEquipoComputo, nombreEquipo, marca, serial));
     }
 
     public Empleado EmpleadoCaja() {
@@ -64,5 +78,9 @@ public class Caja extends AggregateEvent<IdCaja> {
 
     public Boolean CajaRapida() {
         return cajaRapida;
+    }
+
+    public Factura Factura() {
+        return factura;
     }
 }

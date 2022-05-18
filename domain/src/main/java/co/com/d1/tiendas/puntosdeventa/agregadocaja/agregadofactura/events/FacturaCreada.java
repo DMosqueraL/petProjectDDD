@@ -2,9 +2,9 @@ package co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events;
 
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.CantidadProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
+import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.Map;
@@ -14,8 +14,8 @@ public class FacturaCreada extends DomainEvent {
     private final DetalleFactura detalleFactura;
     private final Map<IdProducto, Producto> producto;
     private final DocumentoUsuario documentoUsuario;
-    private final CantidadProducto cantidadProducto;
-    public FacturaCreada(DetalleFactura detalleFactura, Map<IdProducto, Producto> producto, DocumentoUsuario documentoUsuario, CantidadProducto cantidadProducto) {
+    private final Cantidad cantidadProducto;
+    public FacturaCreada(DetalleFactura detalleFactura, Map<IdProducto, Producto> producto, DocumentoUsuario documentoUsuario, Cantidad cantidadProducto) {
         super("co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.FacturaCreada");
         this.detalleFactura = detalleFactura;
         this.producto = producto;
@@ -35,7 +35,7 @@ public class FacturaCreada extends DomainEvent {
         return documentoUsuario;
     }
 
-    public CantidadProducto getCantidadProducto() {
+    public Cantidad getCantidadProducto() {
         return cantidadProducto;
     }
 }

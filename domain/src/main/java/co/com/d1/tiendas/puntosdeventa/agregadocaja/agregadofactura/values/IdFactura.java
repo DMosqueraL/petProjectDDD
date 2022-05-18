@@ -8,6 +8,7 @@ public class IdFactura extends Identity {
     }
 
     public IdFactura() {
+
     }
 
     public static IdFactura of(String id){

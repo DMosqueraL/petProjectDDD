@@ -10,23 +10,21 @@ public class DetalleFactura implements ValueObject<List<Object>> {
 
     private final FechaFactura fechaFactura;
     private final Monto montoFactura;
-    private final DocumentoUsuario documentoUsuario;
     private final Double IVA;
     private final DetallePuntoDeVenta detalleTienda;
     private final List<Object> value = null;
 
-    public DetalleFactura(FechaFactura fechaFactura, Monto montoFactura, DocumentoUsuario documentoUsuario,
+    public DetalleFactura(FechaFactura fechaFactura,
+                          Monto montoFactura,
                           DetallePuntoDeVenta detalleTienda) {
 
         this.fechaFactura = Objects.requireNonNull(fechaFactura);
         this.montoFactura = Objects.requireNonNull(montoFactura);
-        this.documentoUsuario = Objects.requireNonNull(documentoUsuario);
         this.IVA = 0.19;
         this.detalleTienda = Objects.requireNonNull(detalleTienda);
 
         this.value.add(fechaFactura);
         this.value.add(montoFactura);
-        this.value.add(documentoUsuario);
         this.value.add(IVA);
         this.value.add(detalleTienda);
 
