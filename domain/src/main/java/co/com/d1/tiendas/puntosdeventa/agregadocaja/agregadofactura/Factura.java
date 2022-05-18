@@ -1,5 +1,7 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura;
 
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.FacturaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.FacturaGenerada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.ReclamoGenerado;
@@ -7,6 +9,7 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.Canti
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
+import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -50,19 +53,19 @@ public class Factura extends AggregateEvent<IdFactura> {
         appendChange(new ReclamoGenerado(idFactura, documentoUsuario)).apply();
     }
 
-    public DetalleFactura getDetalleFactura() {
+    public DetalleFactura gDetalleFactura() {
         return detalleFactura;
     }
 
-    public Map<IdProducto, Producto> getProductos() {
+    public Map<IdProducto, Producto> Productos() {
         return productos;
     }
 
-    public DocumentoUsuario getNumeroIdentificacion() {
+    public DocumentoUsuario NumeroIdentificacion() {
         return numeroIdentificacion;
     }
 
-    public Cantidad getCantidadProducto() {
+    public Cantidad CantidadProducto() {
         return cantidadProducto;
     }
 }

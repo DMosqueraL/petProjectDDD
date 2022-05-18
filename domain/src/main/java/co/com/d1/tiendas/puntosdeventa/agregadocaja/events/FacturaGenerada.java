@@ -5,7 +5,20 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class FacturaGenerada extends DomainEvent {
+
+    private final IdFactura idFactura;
+    private final IdCaja idCaja;
     public FacturaGenerada(IdFactura idFactura, IdCaja idCaja) {
-        super();
+        super("co.com.d1.tiendas.puntosdeventa.agregadocaja.FacturaGenerada");
+        this.idFactura = idFactura;
+        this.idCaja = idCaja;
+    }
+
+    public IdFactura getIdFactura() {
+        return idFactura;
+    }
+
+    public IdCaja getIdCaja() {
+        return idCaja;
     }
 }
