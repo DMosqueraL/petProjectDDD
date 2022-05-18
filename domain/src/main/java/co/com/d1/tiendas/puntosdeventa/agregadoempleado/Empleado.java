@@ -1,11 +1,11 @@
-package co.com.d1.tiendas.puntosdeventa.empleado;
+package co.com.d1.tiendas.puntosdeventa.agregadoempleado;
 
-import co.com.d1.tiendas.puntosdeventa.empleado.values.Cargo;
-import co.com.d1.tiendas.puntosdeventa.empleado.values.Email;
-import co.com.d1.tiendas.puntosdeventa.empleado.values.HorasLaboralesAlDia;
-import co.com.d1.tiendas.puntosdeventa.empleado.values.IdEmpleado;
-import co.com.d1.tiendas.puntosdeventa.empleado.values.NombreCompleto;
-import co.com.d1.tiendas.puntosdeventa.empleado.values.Telefono;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.Cargo;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.Email;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.HorasLaboralesAlDia;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.IdEmpleado;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.NombreCompleto;
+import co.com.d1.tiendas.puntosdeventa.genericos.Telefono;
 import co.com.sofka.domain.generic.AggregateEvent;
 
 public class Empleado extends AggregateEvent<IdEmpleado> {
@@ -16,18 +16,24 @@ public class Empleado extends AggregateEvent<IdEmpleado> {
     protected HorasLaboralesAlDia horasLaboralesAlDia;
     protected Cargo cargo;
 
-    public Empleado(IdEmpleado entityId) {
-        super(entityId);
+    public Empleado(IdEmpleado idEmpleado) {
+        super(idEmpleado);
     }
 
-    public Empleado(IdEmpleado entityId, NombreCompleto nombreCompleto, Email email, Telefono telefono,
-                    HorasLaboralesAlDia horasLaboralesAlDia, Cargo cargo) {
+    public Empleado(IdEmpleado idEmpleado, NombreCompleto nombreCompleto,
+                    Email email, Telefono telefono, Cargo cargo) {
 
-        super(entityId);
+        super(idEmpleado);
         this.nombreCompleto = nombreCompleto;
         this.email = email;
         this.telefono = telefono;
         this.horasLaboralesAlDia = horasLaboralesAlDia;
+        this.cargo = cargo;
+    }
+
+    public Empleado(IdEmpleado idEmpleado, Cargo cargo) {
+
+        super(idEmpleado);
         this.cargo = cargo;
     }
 

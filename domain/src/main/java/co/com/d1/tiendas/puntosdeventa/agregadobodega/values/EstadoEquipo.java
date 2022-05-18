@@ -6,13 +6,13 @@ import java.util.Objects;
 
 public class EstadoEquipo implements ValueObject<EstadoEquipo.Estados> {
 
-private Estados estados;
+    private Estados estados;
 
     public EstadoEquipo(Estados estados) {
         this.estados = Objects.requireNonNull(estados);
     }
 
-    public enum Estados{
+    public enum Estados {
         BUENO, REGULAR, DAÑADO
     }
 

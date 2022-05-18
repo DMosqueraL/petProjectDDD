@@ -1,16 +1,14 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoCreado;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.EventChange;
-
-import java.util.HashMap;
 
 public class CajaEventChange extends EventChange {
     public CajaEventChange(Caja caja) {

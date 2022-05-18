@@ -1,6 +1,6 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values;
 
-import co.com.d1.tiendas.puntosdeventa.DetallePuntoDeVenta;
+import co.com.d1.tiendas.puntosdeventa.agregadorootpuntodeventa.values.DetallePuntoDeVenta;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.List;
