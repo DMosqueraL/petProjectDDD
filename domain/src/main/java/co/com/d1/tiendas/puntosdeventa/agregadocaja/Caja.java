@@ -1,11 +1,17 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdEquipo;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
+
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.*;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.*;
+import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
+import co.com.d1.tiendas.puntosdeventa.empleado.values.IdEmpleado;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
@@ -17,6 +23,7 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadoempleado.Empleado;
 
+
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -27,18 +34,20 @@ import java.util.Map;
 
 public class Caja extends AggregateEvent<IdCaja> {
     protected IdFactura idFactura;
-    protected Empleado empleadoCaja;
+
+    protected IdEmpleado idEmpleadoCaja;
+
     protected Factura factura;
     protected IdEquipoComputo idEquipoComputo;
     protected EquipoComputo equipoComputo;
     protected TipoCaja tipoCaja;
 
     public Caja(IdCaja entityId,
-                Empleado empleadoCaja,
+                IdEmpleado idEmpleadoCaja,
                 EquipoComputo equipoComputo,
                 TipoCaja tipoCaja) {
         super(entityId);
-        appendChange(new CajaCreada(empleadoCaja, equipoComputo, tipoCaja)).apply();
+        appendChange(new CajaCreada(idEmpleadoCaja, equipoComputo, tipoCaja)).apply();
         subscribe(new CajaEventChange(this));
     }
 
@@ -95,8 +104,8 @@ public class Caja extends AggregateEvent<IdCaja> {
         return idEquipoComputo;
     }
 
-    public Empleado EmpleadoCaja() {
-        return empleadoCaja;
+    public IdEmpleado IdEmpleadoCaja() {
+        return idEmpleadoCaja;
     }
 
     public EquipoComputo EquipoComputo() {

@@ -16,7 +16,7 @@ public class CajaEventChange extends EventChange {
     public CajaEventChange(Caja caja) {
 
         apply((CajaCreada event) -> {
-            caja.empleadoCaja = event.getEmpleadoCaja();
+            caja.idEmpleadoCaja = event.getIdEmpleadoCaja();
             caja.equipoComputo = event.getEquipoComputo();
             caja.tipoCaja = event.getTipoCaja();
         });
