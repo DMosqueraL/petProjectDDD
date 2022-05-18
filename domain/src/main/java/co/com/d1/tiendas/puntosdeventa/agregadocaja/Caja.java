@@ -9,6 +9,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
+
+import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
+import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
+
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -47,18 +51,18 @@ public class Caja extends AggregateEvent<IdCaja> {
                                         Nombre nombreEquipo,
                                         MarcaEquipoComputo marca,
                                         NumeroSerieEquipoComputo serial){
-        appendChange(new EquipoComputoReemplazado(idEquipoComputo, nombreEquipo, marca, serial));
+        appendChange(new EquipoComputoReemplazado(idEquipoComputo, nombreEquipo, marca, serial, idEquipoComputo1, nombreEquipo1, marcaEquipoComputo, serial1));
     }
 
-    public Empleado getEmpleadoCaja() {
+    public Empleado EmpleadoCaja() {
         return empleadoCaja;
     }
 
-    public EquipoComputo getEquipoComputo() {
+    public EquipoComputo EquipoComputo() {
         return equipoComputo;
     }
 
-    public Boolean isCajaRapida() {
+    public Boolean CajaRapida() {
         return cajaRapida;
     }
 }
