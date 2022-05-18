@@ -1,10 +1,10 @@
 package co.com.d1.tiendas.puntosdeventa.agregadobodega;
 
-import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.Categoria;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
-import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.PrecioUnitario;
+import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
+import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
 public class Producto extends Entity<IdProducto> {
@@ -23,6 +23,11 @@ public class Producto extends Entity<IdProducto> {
         this.cantidad = cantidad;
     }
 
+    public Producto(IdProducto idProducto, Nombre nombreProducto) {
+        super(idProducto);
+        this.cantidad = cantidad;
+    }
+
     public Producto(IdProducto idProducto, Nombre nombreProducto, Categoria categoria,
                         PrecioUnitario precioUnitario, Cantidad cantidad) {
         super(idProducto);
@@ -32,23 +37,17 @@ public class Producto extends Entity<IdProducto> {
         this.cantidad = cantidad;
     }
 
-    public void actualizarCantidadDisponibleProducto(Cantidad cantidad){
+    public void actualizarNombreProducto(IdProducto idProducto, Nombre nombreProducto){
 
-        if (cantidad.value() < 0){
-            throw new IllegalArgumentException("No puede actualizar una cantidad disponible" +
-                                               " del producto menor que 0");
+        if(idProducto.value().isBlank()){
+            throw new IllegalArgumentException("No puede actualizar el nombre de un producto " +
+                                               " pasando un paramtero vacio");
         }
 
-        if (String.valueOf(cantidad).isEmpty()){
-            throw new IllegalArgumentException("No puede actualizar una cantidad disponible" +
-                                               " del producto como vacio");
+        if (String.valueOf(nombreProducto).isBlank()){
+            throw new IllegalArgumentException("No puede actualizar el nombre de un producto " +
+                                               " pasando un paramtero vacio");
         }
-
-        if (!cantidad.equals(cantidad.value().intValue())){
-            throw new IllegalArgumentException("No puede actualizar una cantidad disponible" +
-                                               " del producto con decimales");
-        }
-
-        this.cantidad = cantidad;
+        this.nombreProducto = nombreProducto;
     }
 }

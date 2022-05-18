@@ -1,7 +1,10 @@
 package co.com.d1.tiendas.puntosdeventa.agregadobodega;
 
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.BodegaCreada;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.EquipoDañadoReportado;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.KardexInvetantarioActualizado;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.NombreProductoActualizado;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.EstadoEquipo;
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.sofka.domain.generic.EventChange;
 
@@ -22,6 +25,18 @@ public class BodegaEventChange extends EventChange {
             bodega.productos.put(idProducto, new Producto(idProducto, cantidad));
         });
 
+        apply((NombreProductoActualizado event) ->{
+            var idProducto = event.getIdProducto();
+            var nombreProducto = event.getNombreProducto();
+            bodega.productos.put(idProducto, new Producto(idProducto, nombreProducto));
+        });
+
+        apply((EquipoDañadoReportado event) ->{
+            var idEquipo = event.getIdEquipo();
+            var nombreEquipo = event.getNombreEquipo();
+            var estadoEquipo = event.getEstadoEquipo();
+            bodega.equipos.put(idEquipo, new Equipo(idEquipo, nombreEquipo, new EstadoEquipo(EstadoEquipo.Estados.DAÑADO)));
+        });
 
     }
 }
