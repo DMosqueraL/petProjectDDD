@@ -13,7 +13,7 @@ public class Equipo extends Entity<IdEquipo> {
 
     protected EstadoEquipo estadoEquipo;
 
-    public Equipo(IdEquipo entityId) {
+    public Equipo(IdEquipo entityId, Nombre nombreEquipo, EstadoEquipo estadoEquipo) {
         super(entityId);
     }
 
@@ -23,7 +23,7 @@ public class Equipo extends Entity<IdEquipo> {
         super(idEquipo);
         this.nombre = nombre;
         this.cantidad = cantidad;
-        this.estadoEquipo = estadoEquipo;
+        this.estadoEquipo = new EstadoEquipo(EstadoEquipo.Estados.BUENO);
     }
 
     public void reportarEquipoDañado(IdEquipo idEquipo, Nombre nombre, EstadoEquipo estadoEquipo){
