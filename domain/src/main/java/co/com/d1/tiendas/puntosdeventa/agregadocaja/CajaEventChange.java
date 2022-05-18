@@ -3,6 +3,7 @@ package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
+
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoCreado;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;

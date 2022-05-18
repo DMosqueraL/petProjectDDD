@@ -12,7 +12,6 @@ import java.util.Map;
 
 public class BodegaCreada extends DomainEvent {
 
-
     private Empleado empleadoBodega;
     private KardexInventario inventario;
     private Map<IdEquipo, Equipo> equipos;
