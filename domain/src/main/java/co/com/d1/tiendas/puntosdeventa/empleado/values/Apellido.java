@@ -1,4 +1,4 @@
-package co.com.d1.tiendas.puntosdeventa.empleado;
+package co.com.d1.tiendas.puntosdeventa.empleado.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
@@ -12,7 +12,7 @@ public class Apellido implements ValueObject<String> {
         this.apellido = Objects.requireNonNull(apellido);
 
         if (this.apellido.isBlank()){
-            throw new IllegalArgumentException("El apellido no puede estar en blanco");
+            throw new IllegalArgumentException("El apellido no puede estar vacio");
         }
 
         if(this.apellido.length() > 50){

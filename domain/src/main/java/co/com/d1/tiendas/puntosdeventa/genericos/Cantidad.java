@@ -6,26 +6,26 @@ import java.util.Objects;
 
 public class Cantidad implements ValueObject<Integer> {
 
-    private final Integer value;
+    private final Integer cantidad;
 
-    public Cantidad(Integer value) {
-        this.value = Objects.requireNonNull(value);
+    public Cantidad(Integer cantidad) {
+        this.cantidad = Objects.requireNonNull(cantidad);
 
-        if (this.value <= 0){
+        if (this.cantidad <= 0){
             throw new IllegalArgumentException("La cantidad del producto no puede ser menor o igual a 0");
         }
 
-        if (String.valueOf(this.value).isBlank()){
+        if (String.valueOf(this.cantidad).isBlank()){
             throw new IllegalArgumentException("La cantidad del producto no puede estar vacio");
         }
 
-        if (!this.value.equals(this.value.intValue())){
+        if (!this.cantidad.equals(this.cantidad.intValue())){
             throw new IllegalArgumentException("La cantidad del producto no puede tener decimales");
         }
     }
 
     @Override
     public Integer value() {
-        return value;
+        return cantidad;
     }
 }

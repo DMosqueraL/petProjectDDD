@@ -1,4 +1,4 @@
-package co.com.d1.tiendas.puntosdeventa.empleado;
+package co.com.d1.tiendas.puntosdeventa.empleado.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
