@@ -6,6 +6,7 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
+
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaCreada;
@@ -15,6 +16,7 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadoempleado.Empleado;
+
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -24,19 +26,22 @@ import java.util.List;
 import java.util.Map;
 
 public class Caja extends AggregateEvent<IdCaja> {
-
+    protected IdFactura idFactura;
     protected Empleado empleadoCaja;
     protected Factura factura;
+    protected IdEquipoComputo idEquipoComputo;
     protected EquipoComputo equipoComputo;
-    protected Boolean cajaRapida;
+    protected TipoCaja tipoCaja;
 
-
-    public Caja(IdCaja idCaja, Empleado empleadoCaja, EquipoComputo equipoComputo, Boolean cajaRapida) {
-        super(idCaja);
-        appendChange(new CajaCreada(empleadoCaja, equipoComputo, cajaRapida)).apply();
+    public Caja(IdCaja entityId,
+                Empleado empleadoCaja,
+                EquipoComputo equipoComputo,
+                TipoCaja tipoCaja) {
+        super(entityId);
+        appendChange(new CajaCreada(empleadoCaja, equipoComputo, tipoCaja)).apply();
         subscribe(new CajaEventChange(this));
-
     }
+
     private Caja(IdCaja idCaja) {
         super(idCaja);
         subscribe(new CajaEventChange(this));
@@ -72,6 +77,24 @@ public class Caja extends AggregateEvent<IdCaja> {
                 nombreEquipo, marca, serial)).apply();
     }
 
+    public void generarReclamo(IdFactura idFactura,
+                               Factura factura,
+                               DocumentoUsuario documentoUsuario){
+        appendChange(new ReclamoGenerado(idFactura, factura, documentoUsuario)).apply();
+    }
+
+    public void asignarTipoCaja(IdCaja idCaja, TipoCaja tipoCaja){
+        this.tipoCaja = tipoCaja;
+    }
+
+    public IdFactura IdFactura() {
+        return idFactura;
+    }
+
+    public IdEquipoComputo idEquipoComputo() {
+        return idEquipoComputo;
+    }
+
     public Empleado EmpleadoCaja() {
         return empleadoCaja;
     }
@@ -80,8 +103,8 @@ public class Caja extends AggregateEvent<IdCaja> {
         return equipoComputo;
     }
 
-    public Boolean CajaRapida() {
-        return cajaRapida;
+    public TipoCaja TipoCaja() {
+        return tipoCaja;
     }
 
     public Factura Factura() {

@@ -5,6 +5,7 @@ import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdUsuario;
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
@@ -13,7 +14,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Factura extends AggregateEvent<IdFactura> {
-    public DetalleFactura detalleFactura;
+
+    public IdUsuario idUsuario;
+    private IdFactura idFactura;
+    private DetalleFactura detalleFactura;
     public Map<IdProducto, Producto> productos;
     public DocumentoUsuario numeroIdentificacion;
     public Cantidad cantidadProducto;
@@ -46,11 +50,25 @@ public class Factura extends AggregateEvent<IdFactura> {
                                Map<IdProducto, Producto> productos,
                                Cantidad cantidadProducto){
 
-        var idFactura = new IdFactura();
+        this.idFactura = idFactura;
         this.detalleFactura = detalleFactura;
         this.numeroIdentificacion = numeroIdentificacion;
         this.productos = productos;
         this.cantidadProducto = cantidadProducto;
+    }
+
+    public void  cambiarDireccion(IdUsuario idUsuario,
+                                  DocumentoUsuario documentoUsuario,
+                                  Direccion direccion){
+
+    }
+
+    public IdUsuario getIdUsuario() {
+        return idUsuario;
+    }
+
+    public IdFactura getIdFactura() {
+        return idFactura;
     }
 
     public DetalleFactura DetalleFactura() {
