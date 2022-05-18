@@ -1,10 +1,9 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.Facturacreada;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
+import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 

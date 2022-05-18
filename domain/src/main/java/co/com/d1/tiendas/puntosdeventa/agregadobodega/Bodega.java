@@ -1,24 +1,33 @@
 package co.com.d1.tiendas.puntosdeventa.agregadobodega;
 
-import co.com.d1.tiendas.puntosdeventa.Empleado;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.BodegaCreada;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.KardexInvetantarioActualizado;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdBodega;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdEquipo;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.KardexInventario;
+import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
+import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Bodega extends AggregateEvent<IdBodega> {
 
     protected Empleado empleadoBodega;
-    protected Set<Producto> listaProductos;
-    protected Set<Equipo> listaEquipos;
+    protected Map<IdProducto, Producto> productos;
+    protected Map<IdEquipo, Equipo> equipos;
+
     protected KardexInventario inventario;
 
-    public Bodega(IdBodega idBodega, Empleado empleadoBodega, Set<Producto> listaProductos,
-                  Set<Equipo> listaEquipos, KardexInventario inventario) {
-        super(idBodega);
-        appendChange(new BodegaCreada(empleadoBodega, idBodega, inventario, listaEquipos, listaProductos)).apply();
+    public Bodega(IdBodega entityId, Empleado empleadoBodega, Map<IdProducto, Producto> productos,
+                  Map<IdEquipo, Equipo> equipos, KardexInventario inventario) {
+
+        super(entityId);
+        appendChange(new BodegaCreada(empleadoBodega, inventario, equipos, productos)).apply();
         subscribe(new BodegaEventChange(this));
     }
 
@@ -27,9 +36,14 @@ public class Bodega extends AggregateEvent<IdBodega> {
         subscribe(new BodegaEventChange(this));
     }
 
-    public void actualizarKardexInventario() {
-
+    public static Bodega from(IdBodega idBodega, List<DomainEvent> events){
+        var bodega = new Bodega(idBodega);
+        events.forEach(bodega::applyEvent);
+        return bodega;
     }
+
+    public void actualizarKardexInventario(Cantidad cantidad, IdProducto idProducto) {
+        appendChange(new KardexInvetantarioActualizado(idProducto, cantidad)).apply(); }
 
     public void agregarProducto(){
 
@@ -38,5 +52,4 @@ public class Bodega extends AggregateEvent<IdBodega> {
     public void reportarEquipoDañado(){
 
     }
-
 }

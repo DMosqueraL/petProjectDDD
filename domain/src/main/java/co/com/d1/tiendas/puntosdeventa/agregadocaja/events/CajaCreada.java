@@ -1,6 +1,6 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja.events;
 
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.Empleado;
+import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.EquipoComputo;
 import co.com.sofka.domain.generic.DomainEvent;
 
