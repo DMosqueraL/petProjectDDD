@@ -6,22 +6,22 @@ import java.util.Objects;
 
 public class Categoria implements ValueObject<String> {
 
-    private final String value;
+    private final String categoria;
 
-    public Categoria(String value) {
-        this.value = Objects.requireNonNull(value);
+    public Categoria(String categoria) {
+        this.categoria = Objects.requireNonNull(categoria);
 
-        if (this.value.isBlank()){
-            throw new IllegalArgumentException("El nombre de la categoria no puede estar en blanco");
+        if (this.categoria.isBlank()){
+            throw new IllegalArgumentException("El nombre de la categoria no puede estar vacio");
         }
 
-        if(this.value.length() > 50){
+        if(this.categoria.length() > 50){
             throw new IllegalArgumentException("El nombre de la categoria no permite mas de 50 caracteres");
         }
     }
 
     @Override
     public String value() {
-        return value;
+        return categoria;
     }
 }

@@ -6,26 +6,26 @@ import java.util.Objects;
 
 public class PrecioUnitario implements ValueObject<Integer> {
 
-    private final Integer value;
+    private final Integer precioUnitario;
 
-    public PrecioUnitario(Integer value) {
-        this.value = Objects.requireNonNull(value);
+    public PrecioUnitario(Integer precioUnitario) {
+        this.precioUnitario = Objects.requireNonNull(precioUnitario);
 
-        if (this.value <= 0){
+        if (this.precioUnitario <= 0){
             throw new IllegalArgumentException("El precio del producto no puede ser 0");
         }
 
-        if (String.valueOf(this.value).isBlank()){
+        if (String.valueOf(this.precioUnitario).isBlank()){
             throw new IllegalArgumentException("El precio del producto no puede estar vacio");
         }
 
-        if (!this.value.equals(this.value.intValue())){
+        if (!this.precioUnitario.equals(this.precioUnitario.intValue())){
             throw new IllegalArgumentException("El precio del producto no puede tener decimales");
         }
     }
 
     @Override
     public Integer value() {
-        return null;
+        return precioUnitario;
     }
 }
