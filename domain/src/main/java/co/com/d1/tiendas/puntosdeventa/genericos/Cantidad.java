@@ -12,15 +12,15 @@ public class Cantidad implements ValueObject<Integer> {
         this.value = Objects.requireNonNull(value);
 
         if (this.value <= 0){
-            throw new IllegalArgumentException("El precio del producto no puede ser 0");
+            throw new IllegalArgumentException("La cantidad del producto no puede ser menor o igual a 0");
         }
 
         if (String.valueOf(this.value).isBlank()){
-            throw new IllegalArgumentException("El precio del producto no puede estar vacio");
+            throw new IllegalArgumentException("La cantidad del producto no puede estar vacio");
         }
 
         if (!this.value.equals(this.value.intValue())){
-            throw new IllegalArgumentException("El precio del producto no puede tener decimales");
+            throw new IllegalArgumentException("La cantidad del producto no puede tener decimales");
         }
     }
 

@@ -5,7 +5,6 @@ import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.FacturaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.FacturaGenerada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.events.ReclamoGenerado;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.CantidadProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
@@ -22,9 +21,13 @@ public class Factura extends AggregateEvent<IdFactura> {
     protected DocumentoUsuario numeroIdentificacion;
     protected Cantidad cantidadProducto;
 
-    public Factura(IdFactura idFactura, DetalleFactura detalleFactura, DocumentoUsuario numeroIdentificacion, Map<IdProducto, Producto> productos, CantidadProducto cantidadProducto) {
+    public Factura(IdFactura idFactura,
+                   DetalleFactura detalleFactura,
+                   DocumentoUsuario numeroIdentificacion,
+                   Map<IdProducto, Producto> productos,
+                   Cantidad cantidadProducto) {
         super(idFactura);
-        appendChange(new FacturaCreada(detalleFactura, numeroIdentificacion, producto, cantidadProducto)).apply();
+        appendChange(new FacturaCreada(detalleFactura, productos, numeroIdentificacion, cantidadProducto)).apply();
         subscribe(new FacturaEventChange(this));
     }
 
@@ -42,18 +45,18 @@ public class Factura extends AggregateEvent<IdFactura> {
     public void generarFactura(DetalleFactura detalleFactura,
                                DocumentoUsuario numeroIdentificacion,
                                Map<IdProducto, Producto> productos,
-                               CantidadProducto cantidadProducto){
+                               Cantidad cantidadProducto){
 
         var idFactura = new IdFactura();
         appendChange(new FacturaGenerada(idFactura, detalleFactura,
-                numeroIdentificacion, productos,cantidadProducto)).apply();
+                numeroIdentificacion, productos, cantidadProducto)).apply();
     }
 
     public void generarReclamo(IdFactura idFactura, DocumentoUsuario documentoUsuario){
         appendChange(new ReclamoGenerado(idFactura, documentoUsuario)).apply();
     }
 
-    public DetalleFactura gDetalleFactura() {
+    public DetalleFactura DetalleFactura() {
         return detalleFactura;
     }
 

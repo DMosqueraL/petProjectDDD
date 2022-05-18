@@ -1,8 +1,8 @@
 package co.com.d1.tiendas.puntosdeventa.agregadobodega;
 
-import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.EstadoEquipo;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdEquipo;
+import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.Entity;
 

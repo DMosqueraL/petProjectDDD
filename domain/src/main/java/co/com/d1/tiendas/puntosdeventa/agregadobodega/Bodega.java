@@ -13,7 +13,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class Bodega extends AggregateEvent<IdBodega> {
 

@@ -28,16 +28,4 @@ public class EquipoComputo extends Entity<IdEquipoComputo> {
                                         NumeroSerieEquipoComputo serial){
         var equipoNuevo = new EquipoComputo(idEquipoComputo, nombreEquipo, marca, serial);
     }
-
-    public Nombre getNombreEquipo() {
-        return nombreEquipo;
-    }
-
-    public MarcaEquipoComputo getMarca() {
-        return marca;
-    }
-
-    public NumeroSerieEquipoComputo getSerial() {
-        return serial;
-    }
 }
