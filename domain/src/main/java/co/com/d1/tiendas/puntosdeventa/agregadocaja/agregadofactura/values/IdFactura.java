@@ -7,9 +7,6 @@ public class IdFactura extends Identity {
         super(id);
     }
 
-    public IdFactura() {
-
-    }
 
     public static IdFactura of(String id){
         return new IdFactura(id);

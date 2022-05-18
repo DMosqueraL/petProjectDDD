@@ -3,18 +3,20 @@ package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.CantidadProducto;
+
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.CajaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.EquipoComputoReemplazado;
-import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaGenerada;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaCreada;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.events.FacturaImpresa;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.MarcaEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
+import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
@@ -47,22 +49,28 @@ public class Caja extends AggregateEvent<IdCaja> {
         return caja;
     }
 
-    public void generarFactura(IdFactura idFactura, IdCaja idCaja){
-        appendChange(new FacturaGenerada(idFactura, idCaja));
+    public void crearFactura(IdFactura idFactura,
+                             DetalleFactura detalleFactura,
+                             Map<IdProducto, Producto> producto,
+                             DocumentoUsuario documentoUsuario,
+                             Cantidad cantidadProducto){
+        appendChange(new FacturaCreada(idFactura,
+                detalleFactura,
+                producto,
+                documentoUsuario,
+                cantidadProducto)).apply();
     }
 
-    public void detallesFactura(DetalleFactura detalleFactura,
-                                DocumentoUsuario numeroIdentificacion,
-                                Map<IdProducto, Producto> productos,
-                                CantidadProducto cantidadProducto){
-
+    public void imprimirFactura(IdFactura idFactura, Factura factura, IdCaja idCaja){
+        appendChange(new FacturaImpresa(idFactura, factura, idCaja)).apply();
     }
 
-    public void reemplazarEquipoComputo(IdEquipoComputo idEquipoComputo,
+   public void reemplazarEquipoComputo(IdEquipoComputo idEquipoComputo,
                                         Nombre nombreEquipo,
                                         MarcaEquipoComputo marca,
                                         NumeroSerieEquipoComputo serial){
-        appendChange(new EquipoComputoReemplazado(idEquipoComputo, nombreEquipo, marca, serial));
+        appendChange(new EquipoComputoReemplazado(idEquipoComputo,
+                nombreEquipo, marca, serial)).apply();
     }
 
     public Empleado EmpleadoCaja() {
