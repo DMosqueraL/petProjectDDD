@@ -3,6 +3,7 @@ package co.com.d1.tiendas.puntosdeventa.agregadocaja;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.Factura;
+
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DetalleFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.DocumentoUsuario;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
