@@ -1,10 +1,6 @@
 package co.com.d1.tiendas.puntosdeventa.agregadoempleado;
 
-import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.Cargo;
-import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.Email;
-import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.HorasLaboralesAlDia;
-import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.IdEmpleado;
-import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.NombreCompleto;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.*;
 import co.com.d1.tiendas.puntosdeventa.genericos.Telefono;
 import co.com.sofka.domain.generic.AggregateEvent;
 
