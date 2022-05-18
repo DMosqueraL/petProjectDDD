@@ -1,6 +1,7 @@
 package co.com.d1.tiendas.puntosdeventa.agregadorootpuntodeventa;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.Caja;
+import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.TipoCaja;
 import co.com.d1.tiendas.puntosdeventa.agregadoempleado.Empleado;
 import co.com.d1.tiendas.puntosdeventa.agregadorootpuntodeventa.events.CargoAsignadoEmpleado;
 import co.com.d1.tiendas.puntosdeventa.agregadorootpuntodeventa.events.EmpleadoCreado;
@@ -31,8 +32,10 @@ public class PuntoDeVentaEventChange extends EventChange {
         apply((TipoDeCajaDesignado event) ->{
             var idCaja = event.getIdCaja();
             var tipoDeCaja = event.getTipoCaja();
-            var caja = new Caja(event.getIdCaja(), event.getIdEmpleado(), event.getEquipoComputo(),
-                                    new TipoCaja.Tipo.CAJA_RAPIDA);
+            var caja = new Caja(idCaja,
+                    event.getIdEmpleado(),
+                    event.getEquipoComputo(),
+                    new TipoCaja(TipoCaja.Tipo.CAJA_RAPIDA));
             puntoDeVenta.designarTipoDeCaja(idCaja,tipoDeCaja,caja);
 
         });

@@ -7,6 +7,7 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.Docum
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdUsuario;
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
+import co.com.d1.tiendas.puntosdeventa.genericos.Direccion;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 

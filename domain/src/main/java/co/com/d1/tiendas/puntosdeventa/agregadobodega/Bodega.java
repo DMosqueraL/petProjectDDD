@@ -4,14 +4,8 @@ import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.BodegaCreada;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.EquipoDañadoReportado;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.KardexInvetantarioActualizado;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.events.NombreProductoActualizado;
-
-import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.EstadoEquipo;
-import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdBodega;
-import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdEquipo;
-import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
-import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.KardexInventario;
+import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.*;
 import co.com.d1.tiendas.puntosdeventa.agregadoempleado.Empleado;
-
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.AggregateEvent;

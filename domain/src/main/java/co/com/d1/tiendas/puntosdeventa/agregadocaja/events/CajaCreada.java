@@ -1,12 +1,8 @@
 package co.com.d1.tiendas.puntosdeventa.agregadocaja.events;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.EquipoComputo;
-
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.TipoCaja;
-import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
-
-import co.com.d1.tiendas.puntosdeventa.empleado.values.IdEmpleado;
-
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.IdEmpleado;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class CajaCreada extends DomainEvent {
