@@ -2,7 +2,7 @@ package co.com.d1.tiendas.puntosdeventa.agregadocaja.commands;
 
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.EquipoComputo;
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
-import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.Empleado;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearCaja extends Command {

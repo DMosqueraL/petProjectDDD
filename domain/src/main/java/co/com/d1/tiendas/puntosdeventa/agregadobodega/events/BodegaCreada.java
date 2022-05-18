@@ -5,7 +5,7 @@ import co.com.d1.tiendas.puntosdeventa.agregadobodega.Producto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdEquipo;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.KardexInventario;
-import co.com.d1.tiendas.puntosdeventa.empleado.Empleado;
+import co.com.d1.tiendas.puntosdeventa.agregadoempleado.Empleado;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.Map;
