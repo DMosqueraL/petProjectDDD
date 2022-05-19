@@ -7,6 +7,10 @@ import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
+/**
+ * [E] Entidad EquipoComputo que permite asignar a la bodega del punto de venta o tienda D1 los productos
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class Producto extends Entity<IdProducto> {
 
     protected Nombre nombreProducto;

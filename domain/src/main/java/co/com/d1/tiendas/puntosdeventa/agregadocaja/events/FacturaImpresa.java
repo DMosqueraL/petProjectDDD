@@ -5,6 +5,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFac
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.IdCaja;
 import co.com.sofka.domain.generic.DomainEvent;
 
+/**
+ * [EV] Evento donde se ha impreso una factura de caja en el punto de venta o tienda D1
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class FacturaImpresa extends DomainEvent {
     private final IdFactura idFactura;
     private final Factura factura;

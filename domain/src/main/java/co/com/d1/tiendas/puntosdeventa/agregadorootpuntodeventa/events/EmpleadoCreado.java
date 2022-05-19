@@ -7,6 +7,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.NombreCompleto;
 import co.com.d1.tiendas.puntosdeventa.genericos.Telefono;
 import co.com.sofka.domain.generic.DomainEvent;
 
+/**
+ * [EV] Evento donde se ha creado un empleado para el punto de venta o tienda D1.
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class EmpleadoCreado extends DomainEvent {
 
     private IdEmpleado idEmpleado;

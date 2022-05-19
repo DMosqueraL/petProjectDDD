@@ -4,6 +4,9 @@ import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.*;
 import co.com.d1.tiendas.puntosdeventa.genericos.Telefono;
 import co.com.sofka.domain.generic.AggregateEvent;
 
+/**
+ * [A] Agregado que gestiona todo lo relacionado con los empleados del punto de venta o tienda D1
+ */
 public class Empleado extends AggregateEvent<IdEmpleado> {
 
     protected NombreCompleto nombreCompleto;

@@ -6,6 +6,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComp
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.DomainEvent;
 
+/**
+ * [EV] Evento donde se ha creado un equipo de computo en una caja en el punto de venta o tienda D1
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class EquipoComputoCreado extends DomainEvent {
 
     private final IdEquipoComputo idEquipoComputo;

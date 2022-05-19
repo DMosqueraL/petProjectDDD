@@ -5,6 +5,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.Docum
 import co.com.d1.tiendas.puntosdeventa.agregadocaja.agregadofactura.values.IdFactura;
 import co.com.sofka.domain.generic.DomainEvent;
 
+/**
+ * [EV] Evento donde se ha generado un reclamo por parte de un usuario en el punto de venta o tienda D1
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class ReclamoGenerado extends DomainEvent {
 
     private final IdFactura idFactura;

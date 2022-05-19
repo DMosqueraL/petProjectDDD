@@ -4,6 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que le permite a los empleados del dominio determinar las horas de trabajo al día
+ * @return horasLaborales tipo Integer
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class HorasLaboralesAlDia implements ValueObject<Integer> {
 
     private final Integer horasLaborales;

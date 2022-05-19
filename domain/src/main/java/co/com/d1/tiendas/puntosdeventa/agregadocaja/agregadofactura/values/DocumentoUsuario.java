@@ -4,19 +4,25 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+
+/**
+ * [OV] Objeto de Valor que permite determinar o asignar el documento de identidad de un usuario
+ * @return documento tipo String
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class DocumentoUsuario implements ValueObject<String> {
-    private final String value;
+    private final String documento;
 
-    public DocumentoUsuario(String value) {
-        this.value = Objects.requireNonNull(value);
+    public DocumentoUsuario(String documento) {
+        this.documento = Objects.requireNonNull(documento);
 
-        if(this.value.isBlank()){
+        if(this.documento.isBlank()){
             throw new IllegalArgumentException("El documento de identidad no puede estar en blanco.");
         }
     }
 
     @Override
     public String value() {
-        return value;
+        return documento;
     }
 }

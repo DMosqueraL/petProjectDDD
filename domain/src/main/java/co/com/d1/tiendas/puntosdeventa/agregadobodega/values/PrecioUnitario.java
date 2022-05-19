@@ -4,6 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que permite determinar el precio unitario de cada producto
+ * @return precioUnitario tipo String
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class PrecioUnitario implements ValueObject<Integer> {
 
     private final Integer precioUnitario;

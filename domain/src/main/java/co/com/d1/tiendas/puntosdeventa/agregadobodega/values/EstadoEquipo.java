@@ -4,6 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que permite determinar el estado de cada equipo
+ * @return estados tipo String
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class EstadoEquipo implements ValueObject<EstadoEquipo.Estados> {
 
     private Estados estados;

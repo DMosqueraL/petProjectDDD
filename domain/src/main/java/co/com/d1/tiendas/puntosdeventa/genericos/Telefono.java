@@ -4,6 +4,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * Objeto de Valor [OV] générico que puede ser utilizado por varias entidades, otros objetos de valor y/o
+ * agregados para obtener el teléfono de su(s) parámetro(s)
+ * @return numeroTelefono de tipo String
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class Telefono implements ValueObject<String> {
 
     private final String numeroTelefono;

@@ -9,6 +9,10 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.Map;
 
+/**
+ * [EV] Evento donde se crea un punto de venta o tienda D1.
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class PuntoDeVentaCreado extends DomainEvent {
 
     private DetallePuntoDeVenta detallePuntoDeVenta;

@@ -6,6 +6,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdEquipo;
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.Command;
 
+/**
+ * [EV] Evento donde se ha reportado un equipo defectuoso o dañado de la bodega del punto de venta o tienda D1
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class ReportarEquipoDañado extends Command {
 
     private final IdBodega idBodega;

@@ -4,6 +4,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * Objeto de Valor [OV] générico que puede ser utilizado por varias entidades, otros objetos de valor y/o
+ * agregados para  determinar la dirección de su(s) parámetro(s)
+ * @return direccion de tipo String
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class Direccion implements ValueObject<String> {
 
     private final String direccion;

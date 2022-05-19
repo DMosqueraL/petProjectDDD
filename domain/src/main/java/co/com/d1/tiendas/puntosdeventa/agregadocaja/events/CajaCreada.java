@@ -5,6 +5,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.TipoCaja;
 import co.com.d1.tiendas.puntosdeventa.agregadoempleado.values.IdEmpleado;
 import co.com.sofka.domain.generic.DomainEvent;
 
+/**
+ * [EV] Evento donde se ha creado una caja en el punto de venta o tienda D1
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class CajaCreada extends DomainEvent {
 
     private final IdEmpleado idEmpleadoCaja;

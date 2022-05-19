@@ -6,6 +6,11 @@ import co.com.d1.tiendas.puntosdeventa.agregadocaja.values.NumeroSerieEquipoComp
 import co.com.d1.tiendas.puntosdeventa.genericos.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
+/**
+ * [E] Entidad EquipoComputo que permite asignar a la caja del punto de venta o tienda D1 un equipo de computo
+ * (Caja Registradora)
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class EquipoComputo extends Entity<IdEquipoComputo> {
 
     protected Nombre nombreEquipo;

@@ -4,6 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * [OV] Objeto de Valor que permite determinar el kardex de productos del inventario
+ * @return inventario tipo String
+ * @Autores Andrés Lozada y Doris Mosquera
+ */
 public class KardexInventario implements ValueObject<String> {
 
     private final String inventario;

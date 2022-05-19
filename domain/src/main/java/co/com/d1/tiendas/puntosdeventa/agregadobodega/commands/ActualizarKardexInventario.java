@@ -5,6 +5,10 @@ import co.com.d1.tiendas.puntosdeventa.agregadobodega.values.IdProducto;
 import co.com.d1.tiendas.puntosdeventa.genericos.Cantidad;
 import co.com.sofka.domain.generic.Command;
 
+/**
+ * [EV] Evento donde se ha actualizado el kardex del inventario de la bodega del punto de venta o tienda D1
+ * @Autores: Andrés Lozada y Doris Mosquera
+ */
 public class ActualizarKardexInventario extends Command {
 
     private final IdBodega idBodega;
