@@ -1,5 +1,5 @@
 
-## Pet Proyect DDD Tienda D1
+## Pet Proyect DDD - Tienda D1
 
 ### Enlace del video:
 ### https://youtu.be/JMLXUf0OuY8
@@ -12,3 +12,8 @@
 
 ## Modelo Subdominio Puntos de venta
 ![](./images/Modelo%20Subdominio%20Puntos%20de%20venta.webp)
+
+Desarrolladores:
+
+* Andrés Felipe Lozada Andrade
+* Doris Mosquera Lozano
